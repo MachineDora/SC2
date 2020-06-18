@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.cinema.data.user.AccountMapper">
+    <insert id="createNewAccount" useGeneratedKeys="true" keyProperty="id">
+        insert into user(username,password)
+        values(#{username},#{password})
+    </insert>
+
+    <insert id="createNewWorker" useGeneratedKeys="true" keyProperty="id">
+        insert into worker(workername,password)
+        values(#{username},#{password})
+    </insert>
+
+    <select id="getAccountByName" resultMap="User">
+        select * from user where username=#{username}
+    </select>
+    <select id="selectAllUser" resultMap="User">
+        select distinct * from user
+    </select>
+
+    <select id="selectUserById" resultMap="User">
+        select * from user where id=#{id}
+    </select>
+
+    <select id="selectAllWorkers" resultMap="Worker">
+        select * from worker
+    </select>
+
+    <select id="getWorkerByName" resultMap="Worker">
+        select * from worker where workername=#{username}
+    </select>
+
+    <delete id="deleteWorker" parameterType="com.example.cinema.po.Worker">
+        delete from worker where workername=#{username}
+    </delete>
+
+    <resultMap id="User" type="com.example.cinema.po.User">
+    </resultMap>
+
+    <resultMap id="Worker" type="com.example.cinema.po.Worker">
+        <result column="id" property="id"></result>
+        <result column="workername" property="name"></result>
+        <result column="password" property="password"></result>
+    </resultMap>
+</mapper>

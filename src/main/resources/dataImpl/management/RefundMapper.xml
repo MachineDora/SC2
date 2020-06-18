@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.cinema.data.management.RefundMapper">
+    <insert id="insertRefund" parameterType = "com.example.cinema.po.Refund" useGeneratedKeys="true">
+        insert into refund(time_one,time_two,deadline,time_one_percent,time_two_percent,deadline_percent)
+        values(#{timeOne}, #{timeTwo},#{deadline},#{timeOnePercent},#{timeTwoPercent},#{deadlinePercent})
+    </insert>
+    <select id="getLatestRefund" resultMap="Refund">
+        select * from refund where id = (select max(id) from refund)
+    </select>
+
+    <resultMap id="Refund" type="com.example.cinema.po.Refund">
+        <result column="time_one" property="timeOne"></result>
+        <result column="time_two" property="timeTwo"></result>
+        <result column="deadline" property="deadline"></result>
+        <result column="time_one_percent" property="timeOnePercent"></result>
+        <result column="time_two_percent" property="timeTwoPercent"></result>
+        <result column="deadline_percent" property="deadlinePercent"></result>
+    </resultMap>
+
+</mapper>

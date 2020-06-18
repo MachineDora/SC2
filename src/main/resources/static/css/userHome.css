@@ -1,0 +1,359 @@
+ body{
+
+}
+
+.content-container {
+    display: flex;
+    padding: 20px 20px;
+}
+
+
+#new-container {
+	background: url(../images/bg.jpg) top center no-repeat;
+	height: 100%;
+	opacity:0.2;
+	z-index:0;
+
+}
+
+.top-container {
+    position: absolute;
+    top: 0;
+    height: 54px;
+    width: 100%;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    background: hsla(203, 100%, 83%, 0.5);
+}
+
+.movie-item {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 18px -30px 18px;
+}
+
+.movie-item .movie-img:hover {
+    border: 2px solid #1caf9a;
+}
+
+.movie-item .movie-name {
+    position: relative;
+    line-height: 30px;
+    top: -30px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    text-align: center;
+}
+
+.movie-item .movie-img {
+    height: 165px;
+    width: 120px;
+    cursor: pointer;
+}
+
+.statistic-item {
+    margin: 8px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.movie-contianer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 850px;
+    justify-content: space-between;
+}
+
+.statistic-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 850px;
+    justify-content: space-between;
+    margin-left: 40px;
+}
+
+.movie-contianer ul {
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+}
+
+.statistic-container ul {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    padding: 10px 20px;
+}
+
+*{ margin:0; padding:0; list-style:none; border:none;}
+
+.banner{
+    width: 830px;
+    height: 330px;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(62, 62, 62, 0.29);
+    }
+
+.b_pic{ width:4800px; position:absolute; top:0;}
+.b_pic li{ float:left;}
+
+.b_order{ position:absolute; left:310px; bottom:10px;}
+.b_order li{ float: left;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    margin-right: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.b_order li.current{ background:#87cefa;}
+
+.banner button{ width:40px; height:100px; background:url(../images/jt.png); cursor:pointer;background-size:100% 100%;z-index: 2;}
+.btn_l{  position:absolute; left:0; top:115px;}
+.banner button.btn_r{ background-position: 0px 0;transform: rotateY(180deg); position:absolute; right:0; top:115px;z-index: 2;}
+
+.movie-table{
+    top: 5%;
+    overflow: hidden;
+    margin-left: 100px;
+}
+
+.tableText{
+    font-size: 25px;
+}
+
+.table-item{
+    display: block;
+    width: 150%;
+}
+
+.table-item li{
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+}
+
+.table-item li a{
+    position: absolute;
+    color: black;
+    margin-top: 5px;
+    padding-left: 30px;
+    width: 150%;
+    font-size:20px;
+}
+
+.xu1{
+    font-style: italic;
+    font-size: 20px;
+    color: red;
+}
+
+.xu2{
+    font-style: italic;
+    font-size: 15px;
+    color: #ff8630;
+}
+
+ .xu3{
+     font-style: italic;
+     font-size: 15px;
+ }
+
+.piaofang{
+    font-size: 15px;
+    color: red;
+    position: absolute;
+    margin-top: 5px;
+    /* right: 10px; */
+    margin-left: 200px;
+    width: 100px;
+}
+
+
+
+.movie-item2 {
+    position: relative;
+    width: 120px;
+    height: 200px;
+    display: -webkit-inline-box;
+    margin-top: 20px;
+    margin-right: 57.5px;
+    flex-direction: column;
+    list-style: none;
+}
+.movie-item .movie-img {
+    height: 170px;
+    width: 100%;
+    position: absolute;
+    box-shadow: 2px 1px 11px 0px #616161;
+}
+
+.movie-info {
+    width: 120%;
+    top: 80%;
+    left: 10%;
+    position: absolute;
+    flex: 1;
+    padding: 10px 20px 0 20px;
+}
+
+.movie-info > div {
+    margin: 15px 15px;
+}
+
+.movie-title {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    width: 120px;
+    height: 30px;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+}
+
+.toAllMovie{
+    margin-left: 20px;
+    margin-top: 8px;
+    height: 100%;
+    width: 80px;
+    text-align: center;
+    background-color: white;
+}
+
+.toAllMovie>a:hover{
+    color:#87cefa;
+    width: 80px;
+}
+
+.toAllMovie>a:focus{
+    background-color:#87cefa;
+    color:white;
+    width: 80px;
+}
+
+.hot-movie{
+    border-top: 830px;
+    width: 907.5px;
+    position: relative;
+    margin-top: 30px;
+    overflow: visible;
+}
+
+.hot-table {
+    width: 100%;
+    height: auto;
+}
+
+.hotTAT{
+    display: flex;
+    z-index: 2;
+}
+
+.hotText{
+    margin-top: -10px;
+    font-size: 30px;
+}
+
+.main-content{
+    margin-left: 100px;
+    width: 830px;
+    height: 100%;
+    flex: 3;
+}
+
+.aside{
+    margin-right: 100px;
+    flex-grow: 1;
+}
+
+.preVideo{
+    position: relative;
+    width: 830px;
+    margin-top: 30px;
+    border-top: 830px;
+}
+
+.viText{
+    text-align: -webkit-left;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+ .new-content-container {
+     display: flex;
+     position:fixed;
+     top: 54px;
+     flex: 1;
+     height: 94%;
+     width:100%;
+     padding: 20px;
+     overflow-y: scroll;
+ }
+
+.videoList{
+    display: -webkit-box;
+    width: 830px;
+}
+
+.video{
+    margin-right: 55px;
+
+}
+
+.videoName{
+    font-size: 15px;
+}
+
+ .movie-item2 .movie-img {
+     height: 170px;
+     width: 100%;
+     position: absolute;
+     box-shadow: 2px 1px 11px 0px #616161;
+ }
+ .like-table{
+     position: absolute;
+     top:480px;
+     overflow: hidden;
+     margin-left: 100px;
+ }
+
+ .like-item{
+     display: block;
+     width: 150%;
+ }
+
+ .like-item li{
+     position: relative;
+     display: flex;
+     margin-top: 10px;
+ }
+
+ .like-item li a{
+     position: absolute;
+     color: black;
+     margin-top: 5px;
+     padding-left: 30px;
+     width: 150%;
+     font-size:20px;
+ }
+
+ .like-data{
+     font-size: 15px;
+     color: red;
+     margin-top: 5px;
+     top: 480px;
+     /* right: 10px; */
+     margin-left: 200px;
+     width: 100px;
+ }

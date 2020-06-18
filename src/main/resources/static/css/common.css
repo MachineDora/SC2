@@ -1,0 +1,151 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+}
+input {
+    width: 250px;
+    height: 25px;
+    border: 0;
+}
+ul {
+    list-style: none;
+}
+
+#{
+    background: url(../images/bg0.jpg) top center no-repeat;
+    height: 100%;
+    opacity: 0.6;
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    right: 0%;
+    z-index: -1;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 6px;
+    box-shadow: #969696 2px 1px 7px 1px;
+}
+.title {
+    color: black;
+    font-size: 24px;
+}
+.avatar-lg {
+    width: 55px;
+    height:55px;
+    border-radius: 50%;
+}
+.avatar-sm {
+    width: 40px;
+    height:40px;
+    border-radius: 50%;
+}
+.label {
+    padding: 5px;
+    color: #fff;
+    border-radius: 10px!important;
+    margin: 0 20px;
+}
+/**
+    颜色相关
+ */
+.gray-text {
+    color: #777;
+}
+.dark-text {
+    color: #666;
+}
+.error-text {
+    color: #ed5565;
+}
+.primary-text {
+    color: #000000;
+}
+.primary-bg {
+    background: #87cefa;
+}
+.error-bg {
+    background: #ed5565;
+}
+/**
+    form相关
+ */
+
+
+/**
+    导航相关
+ */
+.main-container {
+    display: flex;
+    height: 100%;
+}
+.new-content-container {
+    position:fixed;
+    top: 54px;
+    flex: 1;
+    height: 94%;
+    width:100%;
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+.content-container {
+    flex: 1;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+.content-item {
+    margin-bottom: 30px;
+}
+.content-card {
+    padding: 20px;
+    margin: 10px;
+}
+.nav-left-container {
+    width: 300px;
+    height: 100%;
+    background: #d7ebff;
+    padding: 30px 20px;
+}
+.nav-top-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    background: hsla(203, 100%, 83%, 0.5);
+}
+.nav-user-container {
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+    color: #fff;
+}
+.nav-container .title {
+    color: #fff;
+}
+.nav-logo {
+    color: #333333;
+    font: 30px;
+}
+
+.notice {
+    visibility: hidden;
+    margin-left: 40px;
+    color: rgba(255, 4, 84, 0.82);
+    font-size: 12px;
+}
+

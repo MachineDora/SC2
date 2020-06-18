@@ -1,0 +1,86 @@
+.content-header {
+    display: flex;
+    position: absolute;
+    left: 10%;
+    width: 50%;
+    display: flex;
+}
+
+.content-header2 {
+    display: flex;
+    left: 20%;
+    display: flex;
+}
+
+.movie-basic-info {
+    margin-top: 10px;
+    flex: 1;
+    padding: 0 20px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.movie-operations {
+    margin-top: auto;
+}
+
+#movie-img {
+    height: 350px;
+    width: 240px;
+}
+
+#movie-description {
+    max-height: 80px;
+    min-height: 40px;
+}
+
+.seesion-container {
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    left: 10%;
+    width: 50%;
+    top: 380px;
+}
+
+.statistic-container {
+    margin-top: 30px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.na {
+    margin-top: 10px;
+    /* left: 0%; */
+    /* top: -35%; */
+    display: grid;
+    padding-left: 0;
+    list-style: none;
+    z-index: 2;
+    rgba(255, 255, 255, 0.3);
+}
+.na > li {
+  position: relative;
+  display: block;
+}
+
+.na > li.active{
+  position: relative;
+  display: block;
+  background:#87cefa;
+}
+.na > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+.na > li > a:hover,
+.na > li > a:focus {
+  color:white;
+  text-decoration: none;
+  background-color: #87cefa;
+  width:100%;
+}

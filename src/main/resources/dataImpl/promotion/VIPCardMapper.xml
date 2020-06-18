@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.cinema.data.promotion.VIPCardMapper">
+    <insert id="insertOneCard" parameterType="com.example.cinema.po.VIPCard"
+            useGeneratedKeys="true" keyProperty="id">
+        insert into vip_card(user_id,balance,kind,name,price,description,money1,money2,charge_history)
+        values(#{userId}, #{balance},#{kind},#{name},#{price},#{description},#{money1},#{money2},#{chargeHistory})
+    </insert>
+
+    <insert id="insertNewKindCard" parameterType="com.example.cinema.vo.VipForm"
+            useGeneratedKeys="true" keyProperty="id">
+        insert into vip_info(id,name, price, description, money1, money2)
+        values(#{id},#{name}, #{price}, #{description}, #{money1}, #{money2})
+    </insert>
+
+    <select id="selectCardByKind" resultMap="VIPInfo">
+        select * from vip_info where id = #{id}
+    </select>
+
+    <select id="selectCardByKindId" resultType="Integer">
+        select kind from vip_card where kind = #{kind}
+    </select>
+
+    <select id="selectCardById" resultMap="VIPCard">
+        select * from vip_card where id=#{id}
+    </select>
+
+    <update id="updateKindCardById" parameterType="com.example.cinema.vo.VipForm">
+        update vip_info set name = #{name}, price = #{price}, description = #{description},
+        money1 = #{money1}, money2 = #{money2}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteKindCardById" >
+        delete from vip_info where id=#{id}
+    </delete>
+
+    <select id="selectAllVipCard" resultMap="VIPCard">
+        select * from vip_card
+    </select>
+
+    <select id="selectCardByUserId" resultMap="VIPCard">
+        select * from vip_card where user_id=#{userId}
+    </select>
+
+    <select id="selectAllVIPInfo" resultMap="VIPInfo">
+        select * from vip_info
+    </select>
+
+    <resultMap id="VIPCard" type="com.example.cinema.po.VIPCard">
+        <result column="join_time" property="joinDate"></result>
+        <result column="id" property="id"></result>
+        <result column="user_id" property="userId"></result>
+        <result column="balance" property="balance"></result>
+        <result column="charge_history" property="chargeHistory"></result>
+    </resultMap>
+
+    <resultMap id="VIPInfo" type="com.example.cinema.po.VIPInfo">
+        <result column="name" property="name"></result>
+        <result column="id" property="id"></result>
+        <result column="price" property="price"></result>
+        <result column="description" property="description"></result>
+        <result column="money1" property="money1"></result>
+        <result column="money2" property="money2"></result>
+    </resultMap>
+
+    <update id="updateCardBalance" >
+        update vip_card set balance = #{balance} where id=#{id}
+    </update>
+
+    <update id="updateChargeHistory" >
+        update vip_card set charge_history = #{charge_history} where id=#{id}
+    </update>
+
+
+</mapper>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>影院管理</title>
+    <link rel="stylesheet" type="text/css" href="/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/cinemaHall.css"/>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/request.js"></script>
+    <script src="/js/adminCinemaManage.js"></script>
+
+</head>
+<body>
+<div class="main-container">
+    <div class="nav-left-container">
+        <div class="nav-user-container" style="margin-bottom: 50px;">
+            <img class="avatar-lg" src="/images/defaultAvatar.jpg" />
+            <p class="title">Admin</p>
+        </div>
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation"><a href="/admin/movie/manage"><i class="icon-film"></i> 电影管理</a></li>
+            <li role="presentation"><a href="/admin/session/manage"><i class="icon-calendar"></i> 排片管理</a></li>
+            <li role="presentation"><a href="/admin/promotion/manage"><i class="icon-gift"></i> 活动管理</a></li>
+            <li role="presentation" class="active"><a href="#"><i class="icon-cogs"></i> 影院管理</a></li>
+            <li role="presentation"><a href="/admin/cinema/statistic"><i class="icon-bar-chart"></i> 影院统计</a></li>
+            <li role="presentation"><a href="/admin/member/manage"><i class="icon-user"></i> 充值优惠管理</a></li>
+            <li role="presentation"><a href="/admin/ticket/refund"><i class="icon-remove-circle"></i> 退票管理</a></li>
+            <li role="presentation"><a href="/admin/home/page/manage"><i class="icon-star"></i> 首页滚动栏内容管理</a></li>
+            <li role="presentation"><a href="/admin/worker/manage" style="display: none" id="manage-worker"><i class="icon-key"></i> 工作人员账号管理</a></li>
+        </ul>
+    </div>
+    <div class="content-container">
+        <div id=""></div>
+        <div class="content-item">
+            <span class="title gray-text">常规设置</span>
+            <div class="content-card card">
+                <span class="">用户可见排片日期：</span><span id="can-see-num"></span>
+                <a style="margin-left: 20px;" class="primary-text" id="canview-modify-btn">修改</a>
+                <input type="number" class="form-control" id="canview-set-input" style="display: none;width: 200px;">
+                <a style="display: none" class="primary-text" id="canview-confirm-btn">确认</a>
+            </div>
+        </div>
+        <div class="content-item">
+            <span class="title gray-text">影厅信息录入</span>
+            <div class="content-card card">
+                <span class="" style="display: none">影厅编号</span><span style="display: none" id="new-hall-id"></span>
+                <div>
+                    <a style="margin-left: 20px;" class="primary-text" id="hall-modify-btn">信息录入</a>
+                    <span class="" style="display: none" id="hallname">影厅名称</span>
+                    <input class="form-control" id="name-set-input" style="display: none;width: 200px;">
+                </div>
+                <div>
+                    <span class="" style="display: none" id="hallrow">影厅行数</span>
+                    <input type="number" class="form-control" id="row-set-input" style="display: none;width: 200px;">
+                </div>
+                <div>
+                    <span class="" style="display: none" id="hallcolumn">影厅列数</span>
+                    <input type="number" class="form-control" id="column-set-input" style="display: none;width: 200px;">
+                </div>
+                <a style="display: none" class="primary-text" id="hall-confirm-btn">确认</a>
+                <a style="display: none" class="primary-text" id="hall-cancel-btn">取消</a>
+            </div>
+        </div>
+        <div class="content-item">
+            <span class="title gray-text">影厅信息修改</span>
+            <div class="content-card card">
+                <a style="margin-left: 20px;" class="primary-text" id="modify-btn">信息修改</a>
+                <a style="margin-left: 20px" class="primary-text" id="modify-delete-false">删除影厅</a>
+                <div>
+                    <span style="display: none" id="modifyhall">选择影厅</span>
+                    <select id="hall-select" class="form-control" style="display: inline-block;width: 180px; display: none">
+                    </select>
+                    <a style="margin-left: 20px; display: none" class="primary-text" id="modify-delete-btn">删除</a>
+                    <a style="margin-left: 20px; display: none" class="primary-text" id="modify-cancel">取消</a>
+                    <span class="" style="display: none" id="modifyname">影厅名称</span>
+                    <input class="form-control" id="modify-name-input" style="display: none;width: 200px;">
+                </div>
+                <div>
+                    <span class="" style="display: none" id="modifyrow">影厅行数</span>
+                    <input type="number" class="form-control" id="modify-row-input" style="display: none;width: 200px;">
+                </div>
+                <div>
+                    <span class="" style="display: none" id="modifycolumn">影厅列数</span>
+                    <input type="number" class="form-control" id="modify-column-input" style="display: none;width: 200px;">
+                </div>
+                <a style="display: none" class="primary-text" id="modify-confirm-btn">确认</a>
+                <a style="display: none" class="primary-text" id="modify-cancel-btn">取消</a>
+                <span id="test"></span>
+            </div>
+        </div>
+        <div class="content-item">
+            <span class="title gray-text">影厅管理</span>
+            <div class="content-card card" id="hall-card">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>退票管理</title>
+    <!-- 引入css样式文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/movieList.css"/>
+    <!-- Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <!-- font-asesome图标库 -->
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"/>
+
+
+    <!-- 引入js脚本文件 -->
+    <!-- jquery -->
+    <script src="/js/jquery.js"></script>
+    <!-- Bootstrap 核心 JavaScript 文件 -->
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/request.js"></script>
+    <script src="/js/adminRefundManage.js"></script>
+
+</head>
+<body>
+<div class="main-container">
+    <div class="nav-left-container">
+        <div class="nav-user-container" style="margin-bottom: 50px;">
+            <img class="avatar-lg" src="/images/defaultAvatar.jpg" />
+            <p class="title">Admin</p>
+        </div>
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation"><a href="/admin/movie/manage"><i class="icon-film"></i> 电影管理</a></li>
+            <li role="presentation"><a href="/admin/session/manage"><i class="icon-calendar"></i> 排片管理</a></li>
+            <li role="presentation"><a href="/admin/promotion/manage"><i class="icon-gift"></i> 活动管理</a></li>
+            <li role="presentation"><a href="/admin/cinema/manage"><i class="icon-cogs"></i> 影院管理</a></li>
+            <li role="presentation"><a href="/admin/cinema/statistic"><i class="icon-bar-chart"></i> 影院统计</a></li>
+            <li role="presentation"><a href="/admin/member/manage"><i class="icon-user"></i> 充值优惠管理</a></li>
+            <li role="presentation" class="active"><a href="#"><i class="icon-remove-circle"></i> 退票管理</a></li>
+            <li role="presentation"><a href="/admin/home/page/manage"><i class="icon-star"></i> 首页滚动栏内容管理</a></li>
+            <li role="presentation"><a href="/admin/worker/manage" style="display: none" id="manage-worker"><i class="icon-key"></i> 工作人员账号管理</a></li>
+        </ul>
+    </div>
+    <div class="content-container">
+        <div id=""></div>
+        <div class="content-header">
+            <span class="title gray-text">当前退票政策</span>
+            <button type="button" class="btn btn-primary" data-backdrop="static" data-toggle="modal" data-target="#refundModal"><i class="icon-plus-sign"></i> 添加退票政策</button>
+        </div>
+        <div class="refund-effective">
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="refundModal" tabindex="-1" role="dialog" aria-labelledby="refundModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="movieModalLabel">新增退票策略</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="time-one">时间1</label>
+                        <div class="col-sm-10">
+                            <input type="number" min="1" class="form-control" id="time-one" placeholder="请输入电影开始前多少小时前退票">
+                            <p class="help-block">直接填写数字（小时数）即可</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="time-one-percent">退款百分比</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="time-one-percent" placeholder="请输入百分数（如40%）则此时退款金额为付款金额的40%">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="time-two">时间2</label>
+                        <div class="col-sm-10">
+                            <input type="number" min="1" class="form-control" id="time-two" placeholder="请输入电影开始前多少小时前退票">
+                            <p class="help-block">直接填写数字（小时数）即可,且必须比时间1小</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="time-two-percent">退款百分比</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="time-two-percent" placeholder="请输入百分数（如40%）则此时退款金额为付款金额的40%">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="deadline">最后退款时间</label>
+                        <div class="col-sm-10">
+                            <input type="number" min="1" class="form-control" id="deadline" placeholder="请输入电影开始前多少小时前可退票">
+                            <p class="help-block">直接填写数字（小时数）即可，且必须比时间2小,此时间后不能再退票</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="deadline-percent">退款百分比</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="deadline-percent" placeholder="请输入百分数（如40%）则此时退款金额为付款金额的40%">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="refund-form-bnt">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

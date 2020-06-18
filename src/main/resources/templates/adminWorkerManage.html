@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>退票管理</title>
+    <!-- 引入css样式文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/movieList.css"/>
+    <!-- Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <!-- font-asesome图标库 -->
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"/>
+
+
+    <!-- 引入js脚本文件 -->
+    <!-- jquery -->
+    <script src="/js/jquery.js"></script>
+    <!-- Bootstrap 核心 JavaScript 文件 -->
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/request.js"></script>
+    <script src="/js/adminWorkerManage.js"></script>
+
+</head>
+<body>
+<div class="main-container">
+    <div class="nav-left-container">
+        <div class="nav-user-container" style="margin-bottom: 50px;">
+            <img class="avatar-lg" src="/images/defaultAvatar.jpg" />
+            <p class="title">Admin</p>
+        </div>
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation"><a href="/admin/movie/manage"><i class="icon-film"></i> 电影管理</a></li>
+            <li role="presentation"><a href="/admin/session/manage"><i class="icon-calendar"></i> 排片管理</a></li>
+            <li role="presentation"><a href="/admin/promotion/manage"><i class="icon-gift"></i> 活动管理</a></li>
+            <li role="presentation"><a href="/admin/cinema/manage"><i class="icon-cogs"></i> 影院管理</a></li>
+            <li role="presentation"><a href="/admin/cinema/statistic"><i class="icon-bar-chart"></i> 影院统计</a></li>
+            <li role="presentation"><a href="/admin/member/manage"><i class="icon-user"></i> 充值优惠管理</a></li>
+            <li role="presentation"><a href="/admin/ticket/refund"><i class="icon-remove-circle"></i> 退票管理</a></li>
+            <li role="presentation"><a href="/admin/home/page/manage"><i class="icon-star"></i> 首页滚动栏内容管理</a></li>
+            <li role="presentation" class="active"><a href="#" id="manage-worker"><i class="icon-key"></i> 工作人员账号管理</a></li>
+        </ul>
+    </div>
+    <div class="content-container">
+        <div id=""></div>
+        <div class="content-header">
+            <span class="title gray-text">影院工作人员账号管理</span>
+            <button type="button" class="btn btn-primary" data-backdrop="static" data-toggle="modal" data-target="#workermanage"><i class="icon-key"></i> 账号管理</button>
+            <div class="new-content-container">
+                <div>
+                    <div style="margin-bottom: 30px">
+                        <caption ><span style="font-size: 20px">影院工作人员名单</span></caption>
+                    </div>
+                    <div>
+                        <table class ="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th style="font-size: 20px"> </th>
+                                <th style="font-size: 20px">用户名</th>
+                                <th style="font-size: 20px">密码</th>
+                            </tr>
+                            </thead>
+                            <tbody class = "worker-on-list" >
+                            <!--<tr></tr>-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="modal fade" id="workermanage" tabindex="-1" role="dialog" aria-labelledby="movieModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="discountModalLabel">工作人员账号管理</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="worker-name-input">工作人员用户名</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="worker-name-input" placeholder="用户名">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="worker-password-input">工作人员密码</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="worker-password-input" placeholder="密码">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="worker-form-btn">创建</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="worker-delete-btn">删除</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="worker-search-btn">查看</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

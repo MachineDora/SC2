@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电影</title>
+    <!-- Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <!-- font-asesome图标库 -->
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"/>
+
+    <!-- 引入css样式文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/userMovie.css"/>
+
+    <!-- 引入js脚本文件 -->
+    <!-- jquery -->
+    <script src="/js/jquery.js"></script>
+    <!-- Bootstrap 核心 JavaScript 文件 -->
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/request.js"></script>
+    <script src="/js/userMovie.js"></script>
+</head>
+<body>
+    <div class="top-container">
+        <div class="nav-logo title">NJU_Se电影购票系统</div>
+        <ul class="nav nav-pills">
+            <li role="presentation"><a href="/user/home">首页</a></li>
+            <li role="presentation" class="active"><a href="#">电影</a></li>
+        </ul>
+        <div class="btn-group">
+            <button class="nav-user-container btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img class="avatar-sm" src="/images/defaultAvatar.jpg" />
+                <span class="gray-text" style="vertical-align: middle">用户A&nbsp;<span class="caret"></span></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="/user/buy">电影票</a></li>
+                <li><a href="/user/orderForm">订单</a></li>
+                <li><a href="/user/member">卡包</a></li>
+                <li><a href="/user/history">充值记录</a></li>
+                <li id="logout"><a href="#">登出</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="new-content-container">
+        <div class="shaixuan">
+            <ul class="new-filler-container" style="display: flex">
+                <span>类型：</span>
+                <li ><a id="全部类型">全部</a></li>
+                <li ><a id="科幻">科幻</a></li>
+                <li ><a id="喜剧">喜剧</a></li>
+                <li ><a id="爱情">爱情</a></li>
+                <li ><a id="剧情">剧情</a></li>
+                <li ><a id="恐怖">恐怖</a></li>
+                <li ><a id="战争">战争</a></li>
+                <li ><a id="动画">动画</a></li>
+                <li ><a id="动作">动作</a></li>
+                <li ><a id="犯罪">犯罪</a></li>
+            </ul>
+            <ul class="state-filler-container" style="display: flex">
+                <span>状态：</span>
+                <li ><a id="2">全部</a></li>
+                <li ><a id="0">上架中</a></li>
+                <li ><a id="1">已下架</a></li>
+            </ul>
+        </div>
+        <div class="filler-container card">
+            <div class="input-group" style="width: 100%">
+                <input type="text" class="form-control" id="search-input" placeholder="请输入关键字">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" id="search-btn" type="button">搜索</button>
+                </span>
+            </div>
+
+        </div>
+
+
+        <ul class="movie-on-list" style="left: 200px;height: 80%;top: 125px;display: block;position: absolute">
+        </ul>
+    </div>
+</body>
+</html>

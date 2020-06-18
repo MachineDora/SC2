@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页滚动栏内容管理</title>
+    <!-- 引入css样式文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/movieList.css"/>
+    <!-- Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <!-- font-asesome图标库 -->
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"/>
+
+
+    <!-- 引入js脚本文件 -->
+    <!-- jquery -->
+    <script src="/js/jquery.js"></script>
+    <!-- Bootstrap 核心 JavaScript 文件 -->
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/request.js"></script>
+    <script src="/js/homePageContentManage.js"></script>
+
+</head>
+<body>
+<div class="main-container">
+    <div class="nav-left-container">
+        <div class="nav-user-container" style="margin-bottom: 50px;">
+            <img class="avatar-lg" src="/images/defaultAvatar.jpg" />
+            <p class="title">Admin</p>
+        </div>
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation"><a href="/admin/movie/manage"><i class="icon-film"></i> 电影管理</a></li>
+            <li role="presentation"><a href="/admin/session/manage"><i class="icon-calendar"></i> 排片管理</a></li>
+            <li role="presentation"><a href="/admin/promotion/manage"><i class="icon-gift"></i> 活动管理</a></li>
+            <li role="presentation"><a href="/admin/cinema/manage"><i class="icon-cogs"></i> 影院管理</a></li>
+            <li role="presentation"><a href="/admin/cinema/statistic"><i class="icon-bar-chart"></i> 影院统计</a></li>
+            <li role="presentation"><a href="/admin/member/manage"><i class="icon-user"></i> 充值优惠管理</a></li>
+            <li role="presentation"><a href="/admin/ticket/refund"><i class="icon-remove-circle"></i> 退票管理</a></li>
+            <li role="presentation"class="active"><a href="#"><i class="icon-remove-circle"></i> 首页滚动栏内容管理</a></li>
+            <li role="presentation"><a href="/admin/worker/manage" style="display: none" id="manage-worker"><i class="icon-key"></i> 工作人员账号管理</a></li>
+        </ul>
+    </div>
+    <div class="content-container">
+        <div class="content-header">
+            <span class="title gray-text">当前滚动栏内容</span>
+            <button type="button" class="btn btn-primary" data-backdrop="static" data-toggle="modal" data-target="#homePageModal"><i class="icon-plus-sign"></i> 添加滚动栏内容</button>
+        </div>
+        <div class="refund-effective">
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="homePageModal" tabindex="-1" role="dialog" aria-labelledby="homePageModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="movieModalLabel">添加滚动栏内容</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="picture">图片url</label>
+                        <div class="col-sm-10">
+                            <input type="text" min="1" class="form-control" id="picture" placeholder="请填写滚动栏要显示图片的url">
+                            <p class="help-block">直接填写url即可</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="picture-to-web">网页的url</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="picture-to-web" placeholder="请输入点击图片后指向网页的url">
+                            <p class="help-block">直接填写url即可</p>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="home-page-form-bnt">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

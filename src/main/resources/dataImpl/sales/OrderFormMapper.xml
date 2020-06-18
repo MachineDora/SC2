@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.cinema.data.sales.OrderFormMapper">
+    <insert id="insertOrderForm" parameterType="com.example.cinema.po.OrderForm"
+            useGeneratedKeys="true" keyProperty="orderformId">
+        insert into orderForm(user_id,order_form_id,pay_path,coupon_id,state)
+        values(#{userId}, #{orderformId},#{paypath},#{couponId},#{state})
+    </insert>
+    <insert id="insertOrderFormAndTickets">
+        insert into orderForm_ticket(order_form_id,ticket_id) values
+        <foreach collection="ticketId" item="item" index="index"
+                 separator=",">
+            (#{orderFormId},#{item})
+        </foreach>
+    </insert>
+    <update id="updateOrderFormState">
+        update orderForm set state = #{state} where order_form_id =#{orderFormId}
+    </update>
+    <select id="selectOrderFormById" resultMap="OrderForm">
+        select
+        *
+        from
+        orderForm o
+        left join
+        orderForm_ticket ot
+        on
+        o.order_form_id=ot.order_form_id
+        left join
+        ticket t
+        on
+        ot.ticket_id=t.id
+        where o.order_form_id=#{id}
+    </select>
+    <select id="selectOrderFormByUserId" resultMap="OrderForm">
+        select
+        *
+        from
+        orderForm o
+        left join
+        orderForm_ticket ot
+        on
+        o.order_form_id=ot.order_form_id
+        left join
+        ticket t
+        on
+        ot.ticket_id=t.id
+        where o.user_id=#{userId}
+    </select>
+
+
+    <resultMap id="OrderForm" type="com.example.cinema.po.OrderForm">
+        <result column="state" property="state"></result>
+        <result column="user_id" property="userId"></result>
+        <result column="order_form_id" property="orderformId"></result>
+        <result column="pay_path" property="paypath"></result>
+        <result column="coupon_id" property="couponId"></result>
+        <result column="time" property="time"></result>
+        <collection property="tickets" ofType="com.example.cinema.po.Ticket">
+            <result column="schedule_id" property="scheduleId"></result>
+            <result column="id" property="id"></result>
+            <result column="user_id" property="userId"></result>
+            <result column="column_index" property="columnIndex"></result>
+            <result column="row_index" property="rowIndex"></result>
+            <result column="state" property="state"></result>
+            <result column="time" property="time"></result>
+        </collection>
+    </resultMap>
+</mapper>

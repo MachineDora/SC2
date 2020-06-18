@@ -1,0 +1,63 @@
+#new-container {
+	background: url(../images/bg.jpg) top center no-repeat;
+	height: 100%;
+	opacity:0.2;
+	z-index:0;
+
+}
+
+.table-wrapper {
+}
+
+.table-wrapper .table b {
+    color: #2eafff;
+    font-size: 20px;
+}
+
+.table-wrapper .table td{
+    height: 60px;
+    vertical-align: middle;
+}
+
+
+.comment{
+    margin-top: 10px;
+    left: 65%;
+    position: absolute;
+}
+
+.pinglun{
+    font-size:24px;
+}
+
+.remen{
+    font-size:24px;
+    margin-bottom: 30px;
+}
+
+
+.comment-list{
+    margin-top: 30px;
+    height: 60%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.comIndex{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ececec;
+}
+
+.userName{
+    font-size: 18px;
+}
+
+.commentContent{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.commentData{
+    color: #b3b3b3;
+}

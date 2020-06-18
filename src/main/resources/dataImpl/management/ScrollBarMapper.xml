@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.cinema.data.management.ScrollBarMapper">
+    <insert id="insertOneScrollBar" parameterType = "com.example.cinema.po.ScrollBar" useGeneratedKeys="true">
+        insert into scrollbar(picture_url,web_url)
+        values(#{picture}, #{toWeb})
+    </insert>
+    <select id="getLatestSixScrollBar" resultMap="ScrollBar">
+        select * from scrollbar where (id = (select max(id) from scrollbar)) or (id = (select max(id) from scrollbar) - 1) or (id = (select max(id) from scrollbar) - 2) or (id = (select max(id) from scrollbar) - 3) or (id = (select max(id) from scrollbar) - 4) or (id = (select max(id) from scrollbar)-5)
+    </select>
+
+    <resultMap id="ScrollBar" type="com.example.cinema.po.ScrollBar">
+        <result column="picture_url" property="picture"></result>
+        <result column="web_url" property="toWeb"></result>
+    </resultMap>
+
+</mapper>

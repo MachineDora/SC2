@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电影</title>
+    <!-- Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <!-- font-asesome图标库 -->
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"/>
+
+    <!-- 引入css样式文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/userHome.css"/>
+
+    <!-- 引入js脚本文件 -->
+    <!-- jquery -->
+    <script src="/js/jquery.js"></script>
+    <!-- Bootstrap 核心 JavaScript 文件 -->
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/request.js"></script>
+    <script src="/js/userHome.js"></script>
+
+</head>
+<body>
+    <div class="top-container">
+        <div class="nav-logo title">NJU_Se电影购票系统</div>
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#">首页</a></li>
+            <li role="presentation"><a href="/user/movie">电影</a></li>
+        </ul>
+        <div class="btn-group">
+            <button class="nav-user-container btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img class="avatar-sm" src="/images/tou.png" />
+                <span class="gray-text" style="vertical-align: middle">用户A&nbsp;<span class="caret"></span></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="/user/buy">电影票</a></li>
+                <li><a href="/user/orderForm">订单</a></li>
+                <li><a href="/user/member">卡包</a></li>
+                <li><a href="/user/history">充值记录</a></li>
+                <li id="logout"><a href="#">登出</a></li>
+            </ul>
+        </div>
+    </div>
+<div class="new-content-container">
+    <div class="main-content">
+    <div class="banner">
+        <ul class="b_pic">
+            <li><a href="https://www.baidu.com/index.php?tn=02049043_66_pg"><img src="/images/1.jpg" width="800" height="330"></a></li>
+            <li><a href="javascript:;"><img src="/images/2.jpg" width="800" height="330"></a></li>
+            <li><a href="javascript:;"><img src="/images/3.jpg" width="800" height="330"></a></li>
+            <li><a href="javascript:;"><img src="/images/4.jpg" width="800" height="330"></a></li>
+            <li><a href="javascript:;"><img src="/images/5.jpg" width="800" height="330"></a></li>
+            <li><a href="javascript:;"><img src="/images/6.jpg" width="800" height="330"></a></li>
+        </ul>
+        <ol class="b_order">
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ol>
+        <button class="btn_l"></button>
+        <button class="btn_r"></button>
+    </div>
+
+    <div class="hot-movie">
+        <div class="hotTAT">
+            <div class="hotText">
+                正在热映
+            </div>
+            <div class="toAllMovie">
+                <a href="/user/movie">查看全部</a>
+            </div>
+        </div>
+
+        <div class="hot-table">
+
+        </div>
+
+    </div>
+
+    <div class="preVideo">
+        <div class="viText">
+            预告片精选
+        </div>
+        <div class="videoList">
+            <div class="video">
+
+                <video src="/images/alita.mp4"  width="240" height="160" controls="controls" poster="/images/p1.jpg" style="background: black;">
+                </video>
+                <div class="videoName">
+                    《阿丽塔：战斗天使》
+                </div>
+            </div>
+            <div class="video">
+
+                <video src="/images/jq.mp4"  width="240" height="160" controls="controls" poster="/images/p2.jpg" style="background: black;">
+                </video>
+                <div class="videoName">
+                    《惊奇队长》
+                </div>
+            </div>
+            <div class="video">
+
+                <video src="/images/jq.mp4"  width="240" height="160" controls="controls" poster="/images/p2.jpg" style="background: black;">
+                </video>
+                <div class="videoName">
+                    《惊奇队长》
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class = "aside">
+        <div class="movie-table">
+            <div class="tableText">
+                票房排行榜
+            </div>
+            <ul class="table-item">
+            </ul>
+        </div>
+
+        <div class="like-table">
+            <div class="tableText">
+                最受期待排行榜
+            </div>
+            <ul class="like-item" >
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
